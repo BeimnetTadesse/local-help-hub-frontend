@@ -12,9 +12,9 @@ type Post = {
   username: string;
   email: string;
   address: string;
-  category: string;
-  category_id: number;
-  created_at: string;
+  category_name: string;
+  categoryId: number;
+  createdAt: string;
   volunteers: number;
 };
 
@@ -92,13 +92,13 @@ export default function PostsPage() {
 
     if (categoryFilter !== '') {
       filtered = filtered.filter(
-        (post) => post.category_id?.toString() === categoryFilter
+        (post) => post.categoryId?.toString() === categoryFilter
       );
     }
 
     if (dateFilter !== '') {
       filtered = filtered.filter((post) =>
-        post.created_at.startsWith(dateFilter)
+        post.createdAt.startsWith(dateFilter)
       );
     }
 
